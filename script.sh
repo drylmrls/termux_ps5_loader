@@ -1,11 +1,9 @@
 #!/bin/bash
  
 cd /data/data/com.termux/files/home/remote_lua_loader/payloads                                                  
-# Prompt only for the last octet of the IP address
-read -p "Enter the last octet of the IP address (X in 192.168.1.X): " LAST_OCTET
+read -p "Enter the IP address: " IP_ADD
  
-# Construct the full IP address
-IP_ADDRESS="192.168.1.$LAST_OCTET"
+IP_ADDRESS="$IP_ADD"
  
 echo "Sending lapse.lua to $IP_ADDRESS..."
 python send_lua.py "$IP_ADDRESS" 9026 lapse.lua
